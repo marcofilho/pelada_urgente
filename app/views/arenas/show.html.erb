@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @arena.name %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @arena.width %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @arena.length %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @arena.kind %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @arena.place %>
+</p>
+
+<%= link_to 'Edit', edit_arena_path(@arena) %> |
+<%= link_to 'Back', arenas_path %>

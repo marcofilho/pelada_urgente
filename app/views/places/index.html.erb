@@ -17,7 +17,7 @@
           <td><%= place.name %></td>
           <td><%= place.description %></td>
           <td><%= place.arenas.size %></td>
-          <td><%= link_to 'Alterar', edit_place_path(place), class: "btn btn-warning" %> <%= link_to 'Remover', place, method: :delete, data: { confirm: 'Tem certeza que deseja remover?' }, class: "btn btn-danger" %> <%= link_to "Gerenciar arenas", "#", class: "btn btn-primary" %></td>
+          <td><%= link_to 'Alterar', edit_place_path(place), class: "btn-sm btn-warning" %> <%= link_to 'Remover', place, method: :delete, data: { confirm: 'Tem certeza que deseja remover?' }, class: "btn-sm btn-danger" %> <%= link_to "Gerenciar arenas", "#", class: "btn-sm btn-primary" %></td>
         </tr>
       <% end %>
     </tbody>

@@ -13,7 +13,7 @@
       <% @positions.each do |position| %>
         <tr>
           <td><%= position.name %></td>
-          <td><%= link_to 'Editar', edit_position_path(position), class: "btn btn-warning" %> <%= link_to 'Remover', position, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-danger" %></td>
+          <td><%= link_to 'Editar', edit_position_path(position), class: "btn-sm btn-warning" %> <%= link_to 'Remover', position, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn-sm btn-danger" %></td>
         </tr>
       <% end %>
     </tbody>

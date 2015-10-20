@@ -23,3 +23,9 @@ pt-BR:
         password: "Senha"
         current_password: "Senha atual"
         password_confirmation: "Confirmação de Senha"
+      match:
+        max_players: "Número máximo de jogadores"
+        visibility: "Visibilidade"
+        place_id: "Local"
+        start: "Início"
+        end: "Fim"

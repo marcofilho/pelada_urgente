@@ -19,5 +19,7 @@ pt-BR:
     # Translate model attribute names. Used in Model.human_attribute_name(attribute).
     attributes:
       user:
+        name: "Nome"
         password: "Senha"
+        current_password: "Senha atual"
         password_confirmation: "Confirmação de Senha"

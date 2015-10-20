@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :places
   resources :addresses
   resources :positions
-  devise_for :users
+  devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
 end

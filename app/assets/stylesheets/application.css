@@ -14,3 +14,7 @@
  *= require_self
  *= require bootstrap.min
  */
+
+h2 {
+    margin-top: 0 !important;
+}

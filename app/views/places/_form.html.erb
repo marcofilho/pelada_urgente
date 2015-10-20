@@ -21,7 +21,7 @@
           <%= f.fields_for :address do |f_address| %>
             <div class="field">
               <%= f_address.label :state %>
-              <%= f_address.text_field :state, class: "form-control" %>
+              <%= f_address.select :state, State::ALL.map { |key, value| [value, key] }, { include_blank: true }, class: "form-control" %>
             </div>
 
             <div clas="field">

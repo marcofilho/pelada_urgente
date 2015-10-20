@@ -16,7 +16,7 @@
 
   <div class="field">
     <%= f.label :kind %>
-    <%= f.text_field :kind, class: "form-control" %>
+    <%= f.select :kind, Place::Arena::KINDS.map { |key, value| [value, key] }, { include_blank: true }, class: "form-control" %>
   </div>
   <br />
 

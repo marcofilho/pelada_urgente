@@ -29,18 +29,6 @@ ActiveRecord::Schema.define(version: 20151020194849) do
   add_index "addresses", ["place_id"], name: "index_addresses_on_place_id"
   add_index "addresses", ["user_id"], name: "index_addresses_on_user_id"
 
-  create_table "arenas", force: :cascade do |t|
-    t.string   "name"
-    t.float    "width"
-    t.float    "length"
-    t.string   "kind"
-    t.integer  "place_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "arenas", ["place_id"], name: "index_arenas_on_place_id"
-
   create_table "matches", force: :cascade do |t|
     t.datetime "start"
     t.datetime "end"
@@ -62,6 +50,18 @@ ActiveRecord::Schema.define(version: 20151020194849) do
 
   add_index "participations", ["match_id"], name: "index_participations_on_match_id"
   add_index "participations", ["user_id"], name: "index_participations_on_user_id"
+
+  create_table "place_arenas", force: :cascade do |t|
+    t.string   "name"
+    t.float    "width"
+    t.float    "length"
+    t.string   "kind"
+    t.integer  "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "place_arenas", ["place_id"], name: "index_place_arenas_on_place_id"
 
   create_table "places", force: :cascade do |t|
     t.string   "name"

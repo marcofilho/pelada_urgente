@@ -1,0 +1,2 @@
+module Places::ArenasHelper
+end

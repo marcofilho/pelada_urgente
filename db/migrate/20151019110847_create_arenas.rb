@@ -1,6 +1,6 @@
 class CreateArenas < ActiveRecord::Migration
   def change
-    create_table :arenas do |t|
+    create_table :place_arenas do |t|
       t.string :name
       t.float :width
       t.float :length

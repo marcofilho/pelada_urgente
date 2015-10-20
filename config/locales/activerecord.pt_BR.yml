@@ -34,6 +34,11 @@ pt-BR:
       place:
         name: "Nome"
         description: "Descrição"
+      place/arena:
+        name: "Nome"
+        width: "Largura"
+        length: "Comprimento"
+        kind: "Tipo"
       address:
         state: "Estado"
         city: "Cidade"

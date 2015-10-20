@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   resources :participations
   resources :matches
-  resources :arenas
-  resources :places
+  resources :places do
+    resources :arenas, controller: "places/arenas"
+  end
   resources :addresses
   resources :positions
   devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }

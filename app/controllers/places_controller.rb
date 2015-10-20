@@ -15,6 +15,7 @@ class PlacesController < ApplicationController
   # GET /places/new
   def new
     @place = Place.new
+    @place.build_address
   end
 
   # GET /places/1/edit
@@ -25,6 +26,8 @@ class PlacesController < ApplicationController
   # POST /places.json
   def create
     @place = Place.new(place_params)
+
+    binding.pry
 
     respond_to do |format|
       if @place.save
@@ -69,6 +72,6 @@ class PlacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.require(:place).permit(:name, :description)
+      params.require(:place).permit(:name, :description, address_attributes: [:state, :city, :district, :street, :zip_code])
     end
 end

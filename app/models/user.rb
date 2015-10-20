@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
 
   has_many :participations
   has_many :matches, through: :participations
+
+  def admin?
+    role == "admin"
+  end
 end

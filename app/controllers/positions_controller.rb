@@ -1,5 +1,5 @@
-class PositionsController < ApplicationController
-  before_action :set_position, only: [:show, :edit, :update, :destroy]
+class PositionsController < AdminController
+  before_action :set_position, only: [:edit, :update, :destroy]
 
   # GET /positions
   # GET /positions.json
@@ -28,8 +28,8 @@ class PositionsController < ApplicationController
 
     respond_to do |format|
       if @position.save
-        format.html { redirect_to @position, notice: 'Position was successfully created.' }
-        format.json { render :show, status: :created, location: @position }
+        format.html { redirect_to positions_path, notice: 'Position was successfully created.' }
+        format.json { render :index, status: :created }
       else
         format.html { render :new }
         format.json { render json: @position.errors, status: :unprocessable_entity }
@@ -42,7 +42,7 @@ class PositionsController < ApplicationController
   def update
     respond_to do |format|
       if @position.update(position_params)
-        format.html { redirect_to @position, notice: 'Position was successfully updated.' }
+        format.html { redirect_to positions_path, notice: 'Position was successfully updated.' }
         format.json { render :show, status: :ok, location: @position }
       else
         format.html { render :edit }

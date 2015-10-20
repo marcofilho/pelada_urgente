@@ -1,25 +1,61 @@
 <%= form_for(@place) do |f| %>
-  <% if @place.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h2>
-
-      <ul>
-      <% @place.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="row">
+    <div class="col-lg-4">
+      <fieldset>
+        <legend>Dados do Local</legend>
+        <div class="field">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="field">
+          <%= f.label :description %>
+          <%= f.text_area :description, rows: 7, class: "form-control" %>
+        </div>
+      </fieldset>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <div class="col-lg-8">
+      <fieldset>
+        <legend>Endereço</legend>
+        <div class="col-lg-6">
+          <%= f.fields_for :address do |f_address| %>
+            <div class="field">
+              <%= f_address.label :state %>
+              <%= f_address.text_field :state, class: "form-control" %>
+            </div>
+
+            <div clas="field">
+              <%= f_address.label :city %>
+              <%= f_address.text_field :city, class: "form-control" %>
+            </div>
+
+            <div clas="field">
+              <%= f_address.label :district %>
+              <%= f_address.text_field :district, class: "form-control" %>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="field">
+            <%= f_address.label :street %>
+            <%= f_address.text_field :street, class: "form-control" %>
+          </div>
+
+          <div class="field">
+            <%= f_address.label :zip_code %>
+            <%= f_address.text_field :zip_code, class: "form-control" %>
+          </div>
+        </div>
+          <% end %>
+      </fieldset>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <br />
+  <div class="row">
+    <div class="actions">
+      <%= link_to 'Voltar', places_path, class: "btn btn-primary" %>
+      <%= f.submit "Salvar", class: "btn btn-success" %>
+    </div>
   </div>
 <% end %>

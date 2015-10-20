@@ -29,3 +29,14 @@ pt-BR:
         place_id: "Local"
         start: "Início"
         end: "Fim"
+      position:
+        name: "Nome"
+      place:
+        name: "Nome"
+        description: "Descrição"
+      address:
+        state: "Estado"
+        city: "Cidade"
+        district: "Bairro"
+        zip_code: "CEP"
+        street: "Rua"

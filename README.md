@@ -22,7 +22,7 @@ rake db:create db:migrate db:seed
 rails server
 ```
 
-Dados de acesso para teste:
+## Dados de acesso para teste:
 
 E-mail: igorcoura@gmail.com<br />
 Password: 12345678

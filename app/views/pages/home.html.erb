@@ -1,1 +1,22 @@
-Ae
+<h2>A bola está rolando em <%= pluralize(@matches_running.size, "pelada", "peladas") %></h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Jogadores</th>
+      <th>Término</th>
+      <th>Arena</th>
+      <th>Local</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @matches_running.each do |match| %>
+      <tr>
+        <td><%= match.max_players %></td>
+        <td><%= l match.end, format: :short %></td>
+        <td><%= match.place.name %></td>
+        <td><%= match.place.arenas.first.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

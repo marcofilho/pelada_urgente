@@ -1,5 +1,3 @@
-== README
-
 ## Get Started
 * Ao clonar, entre no repositório do projeto
 * Caso não possua, instale a gem `bundler`:

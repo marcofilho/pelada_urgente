@@ -1,3 +1,24 @@
 == README
 
-Work in progress
+## Get Started
+* Ao clonar, entre no repositório do projeto
+* Caso não possua, instale a gem `bundler`:
+```sh
+gem install bundler
+```
+* Instale as dependências do projeto:
+```sh
+bundle install
+```
+* Inicialize o banco de dados:
+```
+rake db:create db:migrate db:seed
+```
+* Inicie o servidor:
+```
+rails server
+```
+
+Dados de acesso para teste:
+E-mail: igorcoura@gmail.com
+Password: 12345678

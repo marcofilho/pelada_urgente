@@ -6,19 +6,23 @@
 ```sh
 gem install bundler
 ```
+
 * Instale as dependências do projeto:
 ```sh
 bundle install
 ```
+
 * Inicialize o banco de dados:
-```
+```sh
 rake db:create db:migrate db:seed
 ```
+
 * Inicie o servidor:
-```
+```sh
 rails server
 ```
 
 Dados de acesso para teste:
-E-mail: igorcoura@gmail.com
+
+E-mail: igorcoura@gmail.com<br />
 Password: 12345678

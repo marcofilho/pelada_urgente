@@ -1,29 +1,29 @@
 <%= form_for(@match) do |f| %>
-  <% if @match.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@match.errors.count, "error") %> prohibited this match from being saved:</h2>
-
-      <ul>
-      <% @match.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="field">
-    <%= f.label :max_players %><br>
-    <%= f.number_field :max_players %>
+    <%= f.label :max_players %>
+    <%= f.number_field :max_players, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :visibility %><br>
-    <%= f.text_field :visibility %>
+    <%= f.label :visibility %>
+    <%= f.select :visibility, Match::VISIBILITIES.map { |key, value| [value, key] }, { include_blank: true }, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :place_id %><br>
-    <%= f.text_field :place_id %>
+    <%= f.label :place_id %>
+    <%= f.collection_select :place_id, Place.all, :id, :name, { include_blank: true }, class: "form-control" %>
   </div>
+  <br />
+  <div class="field">
+    <%= f.label :start %><br />
+    <%= datetime_select("match", "start", start_year: 2015) %>
+  </div>
+  <br />
+  <div class="field">
+    <%= f.label :end %><br />
+    <%= datetime_select("match", "end", start_year: 2015, default: 1.hour.from_now) %>
+  </div>
+  <br />
   <div class="actions">
-    <%= f.submit %>
+    <%= link_to "Voltar", :back, class: "btn btn-primary" %>
+    <%= f.submit "Salvar", class: "btn btn-success" %>
   </div>
 <% end %>

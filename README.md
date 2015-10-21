@@ -24,5 +24,5 @@ rails server
 
 Dados de acesso para teste:
 
-E-mail: igorcoura@gmail.com
+E-mail: igorcoura@gmail.com<br />
 Password: 12345678
